@@ -19,11 +19,23 @@ abstract class IAuthAPI {
       {required String email, required String password});
   FutureEither<model.Session> login(
       {required String email, required String password});
+  Future<model.Account?> currentUserAccount();
 } // This abstract class contains all functions that will be used in AuthAPI class. This is useful if we change backend implementation. The functions will remain same while we can implement it using any backend.
 
 class AuthAPI implements IAuthAPI {
   final Account _account;
   AuthAPI({required Account account}) : _account = account;
+
+  @override
+  Future<model.Account?> currentUserAccount() async {
+    try {
+      return await _account.get();
+    } on AppwriteException catch (e) {
+      return null;
+    } catch (e) {
+      return null;
+    }
+  }
 
   @override
   FutureEither<model.Account> signUp(
