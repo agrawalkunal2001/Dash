@@ -10,9 +10,15 @@ class UIConstants {
       title: SvgPicture.asset(
         AssetsConstants.twitterLogo,
         color: Pallete.blueColor,
-        height: 50,
+        height: 30,
       ),
       centerTitle: true,
     );
   }
+
+  static List<Widget> bottomTabBarPages = [
+    Text("Feed Screen"),
+    Text("Search Screen"),
+    Text("Notification Screen")
+  ];
 }

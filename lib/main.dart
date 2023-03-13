@@ -1,5 +1,4 @@
 import 'package:dash/common/common.dart';
-import 'package:dash/common/loading_page.dart';
 import 'package:dash/features/auth/controller/auth_controller.dart';
 import 'package:dash/features/auth/view/signup_view.dart';
 import 'package:dash/features/home/view/home_view.dart';
